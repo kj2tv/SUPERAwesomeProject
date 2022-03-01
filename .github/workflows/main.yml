@@ -17,10 +17,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '5.0.100-preview.1.20155.7'  
-    - name: Get Git Version
-      uses: gittools/actions/gitversion/setup@v0.9
-      with:
-          versionSpec: '5.1.x'
+        
     - name: Use GitVersion
       id: gitversion # step id used as reference for output values
       uses: gittools/actions/gitversion/execute@v0.9
