@@ -13,11 +13,11 @@ jobs:
       with:
         versionSpec: '5.5.0'
         
-    - name: Setup.NET Core
-      uses: actions/setup-dotnet@v1
-      with:
+   # - name: Setup.NET Core
+   #   uses: actions/setup-dotnet@v1
+   #   with:
        # dotnet-version: '5.0.100-preview.1.20155.7'  
-         dotnet-version: '3.1.0'  
+   #      dotnet-version: '3.1.0'  
         
     - name: Determine Version
       id:   gitversion
