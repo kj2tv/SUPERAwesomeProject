@@ -43,9 +43,9 @@ jobs:
         python -m pip install --upgrade pip
         mkdir hello_world
         cd hello_world
-        pip download -r requirements.txt
-        unzip \*.whl
-        rm *.whl
+        #pip download -r requirements.txt
+        #unzip \*.whl
+        #rm *.whl
         ls -la
       #octupus CLI tools to help...
     - name: Extract Octopus Tools
