@@ -34,41 +34,4 @@ jobs:
         echo "SemVer: $GITVERSION_SEMVER"
         echo "$GITVERSION_SEMVER" > version.txt
         
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-    - name: Package dependencies
-      run: |
-        python -m pip install --upgrade pip
-        mkdir hello_world
-        cd hello_world
-        #pip download -r requirements.txt
-        #unzip \*.whl
-        #rm *.whl
-        ls -la
-      #octupus CLI tools to help...
-    - name: Extract Octopus Tools
-      run: |
-        mkdir /opt/octo
-        cd /opt/octo
-        wget -O /opt/octo/octopus.zip https://download.octopusdeploy.com/octopus-tools/6.12.0/OctopusTools.6.12.0.portable.zip
-        unzip /opt/octo/octopus.zip
-        chmod +x /opt/octo/Octo
-      # ...us pack up the app then run a cat on version.txt 
-    - name: Pack Application
-      run: >-
-        /opt/octo/Octo pack .
-        --outFolder /home/runner/work/SUPERAwesomeProject/SUPERAwesomeProject
-        --basePath /home/runner/work/SUPERAwesomeProject/SUPERAwesomeProject/hello_world
-        --id SUPERAwesomeProjectLambda
-        --version $(cat /home/runner/work/SUPERAwesomeProject/SUPERAwesomeProject/version.txt)
-        --format zip
-      #then push to octopus server
-    - name: Push to Octopus
-      run: >-
-        /opt/octo/Octo push
-        --server ${{ secrets.MATTC_URL }}
-        --apiKey ${{ secrets.MATTC_API_KEY }}
-        --package /home/runner/work/SUPERAwesomeProject/SUPERAwesomeProject/SUPERAwesomeProjectLambda.$(cat /home/runner/work/SUPERAwesomeProject/SUPERAwesomeProject/version.txt).zip
-        --overwrite-mode IgnoreIfExists
+    
