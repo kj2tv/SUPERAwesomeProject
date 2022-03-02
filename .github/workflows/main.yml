@@ -32,7 +32,7 @@ jobs:
     - name: Display SemVer
       run: |
         echo "SemVer: $GITVERSION_SEMVER"
-        echo $GitVersion_FullSemVer > /github/workspace/version.txt
+        echo "$GITVERSION_SEMVER" > version.txt
         
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
