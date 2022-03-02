@@ -2,7 +2,7 @@ name: Run Gitversion
 
 on: 
   push: 
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
