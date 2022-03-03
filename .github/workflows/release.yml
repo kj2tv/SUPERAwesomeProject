@@ -63,7 +63,7 @@ jobs:
         name: "SUPERAwesomeProject-${{ steps.gitversion.outputs.fullSemVer }}"
         path: server.7z
 
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v3
       with:
         name: "SUPERAwesomeProject-${{ steps.gitversion.outputs.fullSemVer }}"
         path: client.7z
