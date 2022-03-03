@@ -54,9 +54,9 @@ jobs:
     - name: dotnet publish client
       run: dotnet publish src/StupidFirewallManager.Client/StupidFirewallManager.Client.csproj --configuration release /p:AssemblyVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} /p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} /p:InformationalVersion=${{ steps.gitversion.outputs.Sha }}
     - name: 7Zip client
-      run: 7z a -t7z -mx=9 client.7z./src/StupidFirewallManager.Client/bin/release/netcoreapp5.0/publish/
+      run: 7z a -t7z -mx=9 client.7z ./src/StupidFirewallManager.Client/bin/release/netcoreapp5.0/publish/
     - name: 7Zip server
-      run: 7z a -t7z -mx=9 server.7z./src/StupidFirewallManager/bin/release/netcoreapp5.0/publish/
+      run: 7z a -t7z -mx=9 server.7z ./src/StupidFirewallManager/bin/release/netcoreapp5.0/publish/
 
     - uses: actions/upload-artifact@v2
       with:
