@@ -24,9 +24,7 @@ export default function HomeScreen() {
           <DevelopmentModeNotice />
 
           <Text style={styles.getStartedText}>Open up the code for this screen, and while I do that Imma make a feature edit:</Text>
-          <Text style={styles.getStartedText}>Open up the code for this screen, and while I do that Imma make a feature edit, lets try :)</Text>
-          <Text style={styles.getStartedText}>Open up the code for this screen, and while I do that Imma make a feature edit, surely this will work!</Text>
-
+          
           <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
             <MonoText>screens/HomeScreen.js</MonoText>
           </View>
@@ -42,6 +40,10 @@ export default function HomeScreen() {
           <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
             <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
           </TouchableOpacity>
+        </View>
+        <View>
+          <Text style={styles.getStartedText}>DO STUFFFFF :)</Text>
+          <Text style={styles.getStartedText}>I can't believe this is so difficult just work</Text>
         </View>
       </ScrollView>
 
