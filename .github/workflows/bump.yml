@@ -4,9 +4,9 @@ name: Bump version in git
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [reopened]
   push:
-    branches: [main]
+    branches: [master]
 jobs:
   build-and-deploy:    
     runs-on: ubuntu-latest
