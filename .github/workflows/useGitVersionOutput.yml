@@ -42,5 +42,5 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         - run: |
             # Output variables can also be accessed in steps, using an expression.
-            echo "Creating release notes for this version: ${{ needs.calculate-version.outputs.fullSemVer }}."
+            echo "Creating release notes for version: ${{ needs.calculate-version.outputs.fullSemVer }}."
             
