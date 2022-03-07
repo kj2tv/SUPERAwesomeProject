@@ -48,4 +48,5 @@ jobs:
         - run: |
             # Output variables can also be accessed in steps, using an expression.
             echo "Creating release notes for version ${{ needs.calculate-version.outputs.fullSemVer }}."
+            echo "Nice Nice success easy peasy."
             
