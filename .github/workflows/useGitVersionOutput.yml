@@ -4,10 +4,10 @@ name: UseGitVersionToOutput
 
 # Controls when the workflow will run
 on: 
-  # Triggers the workflow on push or pull request events but only for the main branch
   push
-  # Allows you to run this workflow manually from the Actions tab
+  #push on feature branch with prefix
 
+  #merge on main or practically main push
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   calculate-version:
@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       fullSemVer: ${{ steps.gitversion.outputs.fullSemVer }} # To use an output in another job, you have to map it to a job output.
+      branch: ${{ steps.gitversion.outputs.branch }} # To use an output in another job, you have to map it to a job output.
     steps:
       # gitversion/execute step omitted for brevity
       - name: Checkout
@@ -29,18 +30,19 @@ jobs:
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.9.7
         
-  release:
-      runs-on: ubuntu-latest
-      needs: calculate-version
-      steps:
-        - name: Create GitHub release
-          uses: Roang-zero1/github-create-release-action@master
-          with:
-            #version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+
-            created_tag: ${{ needs.calculate-version.outputs.fullSemVer }}
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - run: |
+ # release:
+  #    runs-on: ubuntu-latest
+   #   needs: calculate-version
+      #if contains main branch 
+    #  steps:
+     #   - name: Create GitHub release
+      #    uses: Roang-zero1/github-create-release-action@master
+       #   with:
+        #    #version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+
+         #   created_tag: ${{ needs.calculate-version.outputs.fullSemVer }}
+          #env:
+           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #- run: |
             # Output variables can also be accessed in steps, using an expression.
-            echo "Creating release notes for version: ${{ needs.calculate-version.outputs.fullSemVer }}."
+         #   echo "Creating release notes for version: ${{ needs.calculate-version.outputs.fullSemVer }}."
             
