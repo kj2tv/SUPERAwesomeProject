@@ -4,9 +4,12 @@ name: UseGitVersionToOutput
 
 # Controls when the workflow will run
 on: 
-  push:
+  pull_request: 
     branches:
       - main
+  push:
+    branches:
+      #- main
         #push on main
       - 'release/**'
       - 'feature/**'
