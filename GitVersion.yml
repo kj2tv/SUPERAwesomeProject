@@ -1,5 +1,23 @@
 mode: Mainline
-branches: {}
+branches: 
+  feature:
+    mode: Mainline
+    tag: useBranchName
+    increment: Minor
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: false
+    regex: ^features?[/-]
+    source-branches:
+    - develop
+    - main
+    - release
+    - feature
+    - support
+    - hotfix
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 30000
 assembly-versioning-scheme: MajorMinorPatch
 assembly-informational-format: '{InformationalVersion}'
 increment: Inherit
