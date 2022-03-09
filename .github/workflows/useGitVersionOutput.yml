@@ -10,6 +10,7 @@ on:
         #push on main
       - 'release/**'
       - 'feature/**'
+      - 'develop/**'
       - 'hotfix/**'
         #push on feature branch with prefix release
   
