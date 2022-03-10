@@ -6,7 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
-      <Text>Don't worry champ, this is gonna work!</Text>
+      <Text>Edit to Semver 4</Text>
       <StatusBar style="auto" />
     </View>
   );
