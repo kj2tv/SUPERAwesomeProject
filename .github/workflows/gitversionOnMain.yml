@@ -4,7 +4,7 @@ name: gitVersionOnBranch
 
 # Controls when the workflow will run
 on: 
-  pull_request: 
+  push: 
     branches:
       - main
 
@@ -28,7 +28,6 @@ jobs:
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.9.7
       - run: |
-            #Output variables can also be accessed in steps, using an expression.
             echo "Version: ${{ steps.gitversion.outputs.fullSemVer }}."
         
   release:
