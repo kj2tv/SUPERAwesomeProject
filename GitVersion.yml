@@ -10,7 +10,7 @@ branches:
   feature:
     regex: ^feature?[/-]
     tag: useBranchName
-    mode: ContinuousDeployment
+    mode: ContinuousDelivery
     increment: Minor
     source-branches: ["main"]
   hotfix:
