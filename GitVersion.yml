@@ -3,7 +3,7 @@ branches:
   main:
     regex: (^main$)
     tag: ""
-    increment: Inherit
+    increment: "Inherit"
     is-release-branch: true
   feature:
     regex: ^feature?[/-]
