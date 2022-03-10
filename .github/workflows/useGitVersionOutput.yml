@@ -42,6 +42,7 @@ jobs:
       - run: |
             #Output variables can also be accessed in steps, using an expression.
             echo "Version: ${{ steps.gitversion.outputs.fullSemVer }}."
+            echo "BranchName: ${{ steps.gitversion.outputs.branchName }}."
         
   release:
       runs-on: ubuntu-latest
