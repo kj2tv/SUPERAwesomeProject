@@ -1,12 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
-name: UseGitVersionToOutput
+name: gitVersionOnBranch
 
 # Controls when the workflow will run
 on: 
-  pull_request: 
-    branches:
-      - main
   push:
     branches:
       #- main
@@ -44,20 +41,4 @@ jobs:
             #Output variables can also be accessed in steps, using an expression.
             echo "Version: ${{ steps.gitversion.outputs.fullSemVer }}."
             echo "BranchName: ${{ steps.gitversion.outputs.branchName }}."
-        
-  release:
-      runs-on: ubuntu-latest
-      needs: calculate-version
-      if: contains(needs.calculate-version.outputs.branchName, 'main') # Output variable accessed via `needs` context.
-      steps:
-        - name: Create GitHub release
-          uses: Roang-zero1/github-create-release-action@master
-          with:
-            #version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+
-            created_tag: ${{ needs.calculate-version.outputs.fullSemVer }}
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - run: |
-            #Output variables can also be accessed in steps, using an expression.
-            echo "Creating release notes for version: ${{ needs.calculate-version.outputs.fullSemVer }}."
-            
+    
