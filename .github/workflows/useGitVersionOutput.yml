@@ -39,6 +39,9 @@ jobs:
       - name: Determine Version
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.9.7
+      - run: |
+            #Output variables can also be accessed in steps, using an expression.
+            echo "Version: ${{ steps.gitversion.outputs.fullSemVer }}."
         
   release:
       runs-on: ubuntu-latest
