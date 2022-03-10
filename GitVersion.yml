@@ -3,13 +3,15 @@ branches:
   main:
     regex: (^main$)
     tag: ""
-    increment: Minor
+    increment: Inherit
+    prevent-increment-of-merged-branch-version: false
     #mode: ContinuousDelivery
     is-release-branch: false
   feature:
     regex: ^feature?[/-]
     tag: useBranchName
-    increment: Patch
+    mode: ContinuousDeployment
+    increment: Minor
     source-branches: ["main"]
   hotfix:
     regex: ^hotfix[/-]
