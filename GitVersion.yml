@@ -1,15 +1,19 @@
-mode: Mainline
+mode: ContinuousDelivery
 branches: 
   main:
     regex: (^main$)
     tag: ""
-    increment: Patch
-    is-release-branch: true
+    increment: Inherit
+    prevent-increment-of-merged-branch-version: false
+    mode: ContinuousDelivery
+    is-release-branch: false
   feature:
     regex: ^feature?[/-]
     tag: useBranchName
+    mode: ContinuousDelivery
     increment: Minor
     source-branches: ["main"]
+    #edit 1 on feature branch foo
   hotfix:
     regex: ^hotfix[/-]
     tag: useBranchName
