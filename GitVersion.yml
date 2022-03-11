@@ -13,7 +13,7 @@ branches:
     mode: ContinuousDelivery
     increment: Minor
     source-branches: ["main"]
-    #edit 2 on feature branch foo
+    #edit 1 on feature branch baz
   hotfix:
     regex: ^hotfix[/-]
     tag: useBranchName
