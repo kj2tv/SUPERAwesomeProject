@@ -1,16 +1,14 @@
-mode: ContinuousDelivery
+mode: Mainline
 branches: 
   main:
     regex: (^main$)
     tag: ""
-    increment: Inherit
+    increment: Patch
     prevent-increment-of-merged-branch-version: false
-    mode: ContinuousDelivery
     is-release-branch: false
   feature:
     regex: ^feature?[/-]
     tag: useBranchName
-    mode: ContinuousDelivery
     increment: Minor
     source-branches: ["main"]
     #edit 2 on feature branch baz
