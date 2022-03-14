@@ -11,7 +11,7 @@ branches:
     tag: useBranchName
     increment: Minor
     source-branches: ["main"]
-#edit 3 on bug/baz
+#edit 4 on bug/baz
   hotfix:
     regex: ^hotfix[/-]
     tag: useBranchName
