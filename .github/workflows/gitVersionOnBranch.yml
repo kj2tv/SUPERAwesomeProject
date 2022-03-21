@@ -35,7 +35,7 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '3.1.x' # SDK Version to use; x will use the latest version of the 3.1 channel
-      - run: dotnet build SUPERAwesomeProject
+      - run: dotnet build
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.7
