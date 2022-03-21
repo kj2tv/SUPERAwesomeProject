@@ -20,7 +20,7 @@ on:
 jobs:
   calculate-version:
     name: Calculate Version
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       fullSemVer: ${{ steps.gitversion.outputs.fullSemVer }} # To use an output in another job, you have to map it to a job output.
       branchName: ${{ steps.gitversion.outputs.branchName }} # To use an output in another job, you have to map it to a job output.
